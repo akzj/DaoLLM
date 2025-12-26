@@ -1,0 +1,44 @@
+# LoRA微调配置文件
+# 用于Qwen1.5-7B-Chat模型微调
+
+# 模型配置
+model:
+  name_or_path: "Qwen/Qwen1.5-7B-Chat"
+  trust_remote_code: true
+
+# 数据配置
+data:
+  data_path: "./data/dataset"
+  max_seq_length: 2048
+
+# LoRA配置
+lora:
+  rank: 64
+  alpha: 128
+  dropout: 0.1
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  use_4bit: true
+
+# 训练配置
+training:
+  output_dir: "./output"
+  num_train_epochs: 3
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 8
+  learning_rate: 2e-4
+  warmup_steps: 100
+  logging_steps: 10
+  save_steps: 500
+  save_total_limit: 3
+  fp16: false
+  bf16: true
+  dataloader_num_workers: 4
+  remove_unused_columns: false
+

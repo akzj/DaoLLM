@@ -1,0 +1,41 @@
+# 输出目录
+output/
+*.ckpt
+*.pt
+*.pth
+
+# 日志
+logs/
+*.log
+tensorboard/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# 虚拟环境
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 模型缓存
+.cache/
+models/
+checkpoints/
+
+# 数据缓存
+*.arrow
+*.parquet
+
