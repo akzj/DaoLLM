@@ -205,3 +205,10 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# 训练数据文件（不应提交到git）
+fine-tune/data/novels_raw/
+fine-tune/data/dataset/*.arrow
+fine-tune/output/
+fine-tune/logs/
+fine-tune/venv/
